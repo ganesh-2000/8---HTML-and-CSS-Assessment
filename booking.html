@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Booking - Booking Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Ticket Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="now-showing.html">Now Showing</a></li>
+                <li><a href="signup.html" target="_blank">Signup</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Choose a movie to watch:</h2>
+        
+        <div class="movies">
+            <div class="movie">
+              <h3>The Avengers</h3>
+              <img src="img/movie1.jpg" alt="Movie 1 Poster">
+                <p>Available seats: <span class="available-seats">25</span></p>
+                <p>Booked seats: <span class="booked-seats">27</span></p>
+                <button class="book-button">Book</button>
+            </div>
+            
+            <div class="movie">
+              <h3>Star Wars</h3>
+              <img src="img/movie2.jpg" alt="Movie 2 Poster">
+                <p>Available seats: <span class="available-seats">30</span></p>
+                <p>Booked seats: <span class="booked-seats">12</span></p>
+                <button class="book-button">Book</button>
+            </div>
+            
+            <div class="movie">
+              <h3>Jurassic Park</h3>
+              <img src="img/movie4.jpg" alt="Movie 3 Poster">
+                <p>Available seats: <span class="available-seats">20</span></p>
+                <p>Booked seats: <span class="booked-seats">17</span></p>
+                <button class="book-button">Book</button>
+            </div>
+        </div>
+        
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>Booking Details</h3>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="seats">Seats:</label>
+                    <input type="number" id="seats" name="seats" min="1" max="10" required>
+                    
+                    <input type="submit" value="Book Now">
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Movie Ticket Booking</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+
+<script>
+  // Get all the book buttons and modal
+const bookButtons = document.querySelectorAll('.book-button');
+const modal = document.querySelector('.modal');
+
+// Loop through each book button and add an event listener to show the modal when clicked
+bookButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
+});
+
+// Get the close button and add an event listener to hide the modal when clicked
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+// Get the form and add an event listener to prevent the default submit behavior and update the available and booked seats
+
+</script>
+</html>
